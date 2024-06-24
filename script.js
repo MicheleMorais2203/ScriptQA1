@@ -1,9 +1,3 @@
-// escapeHTMLPolicy = trustedTypes.createPolicy('default', {
-//   createHTML: (string) => string,
-//   createScriptURL: (string) => string,
-//   createScript: (string) => string,
-// });
-
 const escala = document.createElement('escala');
 document.body.appendChild(escala);
 escala.id = 'escala';
