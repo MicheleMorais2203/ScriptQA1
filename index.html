@@ -20,42 +20,76 @@
             margin: 1em 0;
             padding-left: 20px;
         }
+        #content {
+            display: block;
+        }
+        .hidden {
+            display: none;
+        }
+        .button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .button:hover {
+            background-color: #006f8b;
+        }
     </style>
 </head>
 <body>
-    <h1>Faço parte da Equipe de Soluções Técnicas do Google.</h1>
-    <p>
-        Dando continuidade ao atendimento do seu gerente de contas <strong>xxxxxx</strong>, nós vamos fazer <strong>xxxxx</strong>. 
-        Preciso que você me informe o seu email, telefone de contato, o seu site e o ID da conta do Google Ads. 
-        Você possui o backup do seu site e todos os acessos às ferramentas do Google?
-    </p>
-    <h2>Se já tem meeting:</h2>
-    <p>
-        Vou acessar a meeting que você já estava com seu Gerente de contas para o compartilhamento de tela. 
-        Peço que você feche páginas particulares para iniciarmos o atendimento. 
-        Informo também que a chamada tem duração de 30 minutos a 45 minutos. 
-        Quando entrar na meeting, envio os termos e tiro SS.
-    </p>
-    <h2>Se não tem meeting:</h2>
-    <p>
-        Estou enviando um email pra você, com os termos e condições, preciso que você leia e me diga se está de acordo, 
-        e também o link do Google Meet para fazermos o compartilhamento de tela. 
-        Peço que você feche páginas particulares para iniciarmos o atendimento. 
-        Informo também que a chamada tem duração de 30 minutos a 45 minutos.
-    </p>
-    <hr>
-    <h2>Implementação:</h2>
-    <p>Pode publicar por favor, e encerrar o compartilhamento da tela.</p>
-    <hr>
-    <h2>Conclusão:</h2>
-    <p>
-        Ficou claro ou você tem alguma dúvida sobre o que fizemos?
-    </p>
-    <p>
-        Você vai receber um e-mail de encerramento deste caso, com o resumo do que fizemos nesse atendimento. 
-        Junto desse email vai chegar uma pesquisa de satisfação referente ao meu atendimento. 
-        Se você puder responder, seria muito importante para nós. 
-        Lembrando que se você tiver dúvidas sobre campanhas ou orçamentos é só entrar em contato com o gerente de contas.
-    </p>
+    <button class="button" onclick="toggleContent()">Minimizar</button>
+    <div id="content">
+        <h1>Faço parte da Equipe de Soluções Técnicas do Google.</h1>
+        <p>
+            Dando continuidade ao atendimento do seu gerente de contas <strong>xxxxxx</strong>, nós vamos fazer <strong>xxxxx</strong>. 
+            Preciso que você me informe o seu email, telefone de contato, o seu site e o ID da conta do Google Ads. 
+            Você possui o backup do seu site e todos os acessos às ferramentas do Google?
+        </p>
+        <h2>Se já tem meeting:</h2>
+        <p>
+            Vou acessar a meeting que você já estava com seu Gerente de contas para o compartilhamento de tela. 
+            Peço que você feche páginas particulares para iniciarmos o atendimento. 
+            Informo também que a chamada tem duração de 30 minutos a 45 minutos. 
+            Quando entrar na meeting, envio os termos e tiro SS.
+        </p>
+        <h2>Se não tem meeting:</h2>
+        <p>
+            Estou enviando um email pra você, com os termos e condições, preciso que você leia e me diga se está de acordo, 
+            e também o link do Google Meet para fazermos o compartilhamento de tela. 
+            Peço que você feche páginas particulares para iniciarmos o atendimento. 
+            Informo também que a chamada tem duração de 30 minutos a 45 minutos.
+        </p>
+        <hr>
+        <h2>Implementação:</h2>
+        <p>Pode publicar por favor, e encerrar o compartilhamento da tela.</p>
+        <hr>
+        <h2>Conclusão:</h2>
+        <p>
+            Ficou claro ou você tem alguma dúvida sobre o que fizemos?
+        </p>
+        <p>
+            Você vai receber um e-mail de encerramento deste caso, com o resumo do que fizemos nesse atendimento. 
+            Junto desse email vai chegar uma pesquisa de satisfação referente ao meu atendimento. 
+            Se você puder responder, seria muito importante para nós. 
+            Lembrando que se você tiver dúvidas sobre campanhas ou orçamentos é só entrar em contato com o gerente de contas.
+        </p>
+    </div>
+    <script>
+        function toggleContent() {
+            var content = document.getElementById('content');
+            var button = document.querySelector('.button');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                button.textContent = 'Minimizar';
+            } else {
+                content.classList.add('hidden');
+                button.textContent = 'Expandir';
+            }
+        }
+    </script>
 </body>
 </html>
